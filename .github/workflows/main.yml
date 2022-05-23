@@ -1,0 +1,123 @@
+# This is a basic workflow to help you get started with Actions
+
+name: API/QA : Get requests  
+
+on:
+  schedule:
+   - cron: "00 00 * * 1-5"
+
+#################### GET ######################
+
+jobs:
+  API_QA_GET :
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      # Runs a single command using the runners shell
+      - name: Prepare reports folder
+        run: mkdir Reports
+        
+      - name: install setup-tools
+        run: sudo pip3 install setuptools
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          sudo pip3 install \
+            robotframework==3.2.2 \
+            robotframework-requests==0.9.3 \
+
+      - name: Run tests
+        run: |
+          robot -x results -T -d Reports/ -i api -i get.
+
+      - name: Archive test results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report
+          path: Reports/*
+          
+      - name: Export status
+        if: ${{ always() }}      
+        run: |
+          API_STATUS=${{ job.status }}
+          echo "API_STATUS=$API_STATUS" >> $GITHUB_ENV
+      - name: Export variable for next jobs
+        if: ${{ always() }}      
+        uses: UnlyEd/github-action-store-variable@v2.1.0
+        with:
+          variables: |
+            API_STATUS=${{ env.API_STATUS }}
+
+
+    #################### POST ######################
+
+    API_QA_POST :
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      # Runs a single command using the runners shell
+      - name: Prepare reports folder
+        run: mkdir Reports
+        
+      - name: install setup-tools
+        run: sudo pip3 install setuptools
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          sudo pip3 install \
+            robotframework==3.2.2 \
+            robotframework-requests==0.9.3 \
+
+      - name: Run tests
+        run: |
+          robot -x results -T -d Reports/ -i api -i post.
+
+      - name: Archive test results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-report
+          path: Reports/*
+          
+      - name: Export status
+        if: ${{ always() }}      
+        run: |
+          API_STATUS=${{ job.status }}
+          echo "API_STATUS=$API_STATUS" >> $GITHUB_ENV
+      - name: Export variable for next jobs
+        if: ${{ always() }}      
+        uses: UnlyEd/github-action-store-variable@v2.1.0
+        with:
+          variables: |
+            API_STATUS=${{ env.API_STATUS }}
