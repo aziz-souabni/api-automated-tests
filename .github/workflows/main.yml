@@ -2,16 +2,25 @@
 
 name: GET and POST tests 
 
-on:
-  schedule:
-   - cron: "00 00 * * 1-5"
-
+#on:
+#  schedule:
+#   - cron: "00 00 * * 1-5"
+   
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 #################### GET ######################
-
+        
 jobs:
   API_tests:
     #runs-on: self-hosted
-    on: workflow_dispatch
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
