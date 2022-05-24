@@ -1,5 +1,5 @@
 # How to set up automated tests on APIs using Robot Framework with CI integration?
-In this repository, You will find some examples of automating tests on APIs using Robot Framework. The first part will be dedicated to the GET request and the second one to Post request. And finally, Github Actions will be used as a CI to schedule test execution. The examples comes with videos and screeshots.
+In this repository, You will find some examples of automating tests on APIs using Robot Framework. The first part will be dedicated to the GET request and the second one to Post request. And finally, Github Actions will be used for CI side to automate and to schedule test execution with workflows. The examples comes with videos and screeshots.
 
 # Technologies
 * Python : https://www.python.org/downloads/
@@ -23,20 +23,22 @@ Test 2 – Get Request With Url Params
 * Step 3: Log the response body.
 
 ### Tests Execution
-The animation below show how to execute tests locally using "robot" command :
+The animation below show how to execute tests locally using "robot" command ```robot /Tests```
 
-![API get request test execution](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-execution-get.gif)
+<kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-execution-get.gif" alt="API get request test execution" width="680"  /></kbd>
 
 ### Tests logs and reports
 Robot Framework provides easy-to-read result [reports](https://github.com/aziz-souabni/api-automated-tests/blob/main/report.html) and [logs](https://github.com/aziz-souabni/api-automated-tests/blob/main/log.html) in HTML format :
 
-* Report files : They contains an overview of the test execution results and statistics based on tags as well as a list of all executed test cases. An example report file of successful test execution :
+* Report file contains an overview of the test execution results and statistics based on tags as well as a list of all executed test cases
 
-![report file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-report.png)
+*An example report file of successful test execution*
 
-* Log files : They contains details to investigate test results. An example of beginning of a log file :
+<kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-report.png" alt="report file test result robot framework" width="680"  /></kbd>
 
-![log file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-log.png)
+* Log file contains details to investigate test results
 
+*An example of beginning of a log file*
 
+<kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-log.png" alt="log file test result robot framework" width="680" /></kbd>
 
