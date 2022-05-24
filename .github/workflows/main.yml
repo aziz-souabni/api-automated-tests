@@ -69,7 +69,7 @@ jobs:
     #################### POST ######################
 
     API_QA_POST :
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
