@@ -30,10 +30,10 @@ The animation below show how to execute tests locally using "robot" command :
 Robot Framework provides easy-to-read result [reports](https://github.com/aziz-souabni/api-automated-tests/blob/main/report.html) and [logs](https://github.com/aziz-souabni/api-automated-tests/blob/main/log.html) in HTML format :
 * Report files contains an overview of the test execution results and statistics based on tags as well as a list of all executed test cases.
 An example report file of successful test execution
-[![report file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assests/test-report.png?raw=true)]
+[![report file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assests/test-report.png)]
 * Log files contains details to investigate test results
 An example of beginning of a log file
-[![log file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assests/test-log.png?raw=true)]
+[![log file test result robot framework](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assests/test-log.png)]
 
 
 
