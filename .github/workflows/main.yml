@@ -53,7 +53,7 @@ jobs:
 
       - name: Run API tests
         run: |
-          robot -x results -T -d Reports/ -i api.
+          robot -x results -T -d Reports/ -i api .
 
       - name: Archive test results
         if: ${{ always() }}
