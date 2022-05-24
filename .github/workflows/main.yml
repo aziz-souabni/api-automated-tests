@@ -10,11 +10,12 @@ on:
 
 jobs:
   API_QA_GET :
-    runs-on: self-hosted
+    #runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.9]
 
     steps:
       - uses: actions/checkout@v2
@@ -38,12 +39,12 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo pip3 install \
-            robotframework==3.2.2 \
+            robotframework==4.0.3 \
             robotframework-requests==0.9.3 \
 
       - name: Run tests
         run: |
-          robot -x results -T -d Reports/ -i api -i get.
+          robot -i api -i get -x results -T -d Reports/.
 
       - name: Archive test results
         if: ${{ always() }}
@@ -101,7 +102,7 @@ jobs:
 
       - name: Run tests
         run: |
-          robot -x results -T -d Reports/ -i api -i post.
+          robot -i api -i post -x results -T -d Reports/.
 
       - name: Archive test results
         if: ${{ always() }}
