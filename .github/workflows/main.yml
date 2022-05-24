@@ -9,7 +9,7 @@ on:
 #################### GET ######################
 
 jobs:
-  API_GET:
+  API_tests:
     #runs-on: self-hosted
     runs-on: ubuntu-latest
 
@@ -42,9 +42,9 @@ jobs:
             robotframework==4.0.3 \
             robotframework-requests==0.9.3 \
 
-      - name: Run tests
+      - name: Run API tests
         run: |
-          robot -i api -i get -x results -T -d Reports/.
+          robot -i api -x results -T -d Reports/.
 
       - name: Archive test results
         if: ${{ always() }}
@@ -53,48 +53,3 @@ jobs:
           name: test-report
           path: Reports/*
 
-
-    #################### POST ######################
-
-  API_POST:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        python-version: [3.9]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - uses: actions/checkout@v2
-        with:
-          submodules: recursive
-
-      # Runs a single command using the runners shell
-      - name: Prepare reports folder
-        run: mkdir Reports
-        
-      - name: install setup-tools
-        run: sudo pip3 install setuptools
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          sudo pip3 install \
-            robotframework==4.0.3 \
-            robotframework-requests==0.9.3 \
-
-      - name: Run tests
-        run: |
-          robot -i api -i post -x results -T -d Reports/.
-
-      - name: Archive test results
-        if: ${{ always() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-report
-          path: Reports/*
