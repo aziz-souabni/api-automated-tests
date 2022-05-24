@@ -9,7 +9,7 @@ on:
 #################### GET ######################
 
 jobs:
-  API_QA_GET :
+  API_GET :
     #runs-on: self-hosted
     runs-on: ubuntu-latest
 
@@ -68,12 +68,12 @@ jobs:
 
     #################### POST ######################
 
-    API_QA_POST :
+    API_POST :
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        python-version: [3.8]
+        python-version: [3.9]
 
     steps:
       - uses: actions/checkout@v2
@@ -97,7 +97,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo pip3 install \
-            robotframework==3.2.2 \
+            robotframework==4.0.3 \
             robotframework-requests==0.9.3 \
 
       - name: Run tests
