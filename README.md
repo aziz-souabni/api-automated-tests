@@ -24,7 +24,7 @@ Test 2 – Get Request With Url Params
 
 ### Test Execution
 The animation below show how to execute tests locally using "robot" command :
-[![API get request test execution](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assests/test-execution-get.gif?raw=true)] 
+[![API get request test execution](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-execution-get.gif)] 
 
 ### Test log and report
 Robot Framework provides easy-to-read result [reports](https://github.com/aziz-souabni/api-automated-tests/blob/main/report.html) and [logs](https://github.com/aziz-souabni/api-automated-tests/blob/main/log.html) in HTML format :
