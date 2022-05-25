@@ -1,5 +1,5 @@
 # How to set up automated tests on APIs using Robot Framework with CI integration?
-In this repository, You will find some examples of automating tests on APIs using Robot Framework. The first part will be dedicated to the GET request and the second one to Post request. And finally, Github Actions will be used for CI side to automate and to schedule test execution with workflows. The examples comes with videos and screeshots.
+In this repository, You will find some examples of automating tests on APIs using Robot Framework. The first part will be dedicated to the GET request and the second one to POST request. And finally, Github Actions will be used for CI side to automate and to schedule test execution with workflows. The examples comes with videos and screeshots.
 
 # Technologies
 * Python : https://www.python.org/downloads/
