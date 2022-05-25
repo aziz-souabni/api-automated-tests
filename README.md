@@ -42,3 +42,13 @@ Robot Framework provides easy-to-read result [reports](https://github.com/aziz-s
 
 <kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-log.png" alt="log file test result robot framework" width="680" /></kbd>
 
+# API Automated Tests and Continious Integration
+As automated tests could be a part of CI process, Github Actions was used to create custom CI workflows that runs on specific activity on the Github repository such a pull request, at scheduled time or external events. 
+In this example, the jobs runs manually using ```workflow_dispatch``` by clicking on the "run workflows" button from "Actions" tab.
+
+*Launch tests using Actions and workflows*
+<kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/ci-github-actions-automated-tests.png" alt="ci github actions automated api tests" width="680" /></kbd>
+
+The media below shows how tests could be runned using Githbub Actions and be a part of Continious Integration and Continious Testing.
+
+<kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/ci-execution.gif" alt="ci github actions api automated tests execution" width="680"  /></kbd>
