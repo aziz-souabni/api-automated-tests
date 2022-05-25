@@ -47,6 +47,7 @@ As automated tests could be a part of CI process, Github Actions was used to cre
 In this example, the jobs runs manually using ```workflow_dispatch``` by clicking on the "run workflows" button from "Actions" tab.
 
 *Launch tests using Actions and workflows*
+
 <kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/ci-github-actions-automated-tests.png" alt="ci github actions automated api tests" width="680" /></kbd>
 
 The media below shows how tests could be runned using Githbub Actions and be a part of Continious Integration and Continious Testing.
