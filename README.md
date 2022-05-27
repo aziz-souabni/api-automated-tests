@@ -28,7 +28,7 @@ The animation below show how to execute tests locally using "robot" command ```r
 <kbd><img src="https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/test-execution-get.gif" alt="API get request test execution" width="680"  /></kbd>
 
 ### Tests logs and reports
-Robot Framework provides easy-to-read result [reports](https://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/report.html) and [logs](hhttps://github.com/aziz-souabni/api-automated-tests/blob/main/readme-assets/log.html) in HTML format :
+Robot Framework provides easy-to-read result [reports](https://github.com/aziz-souabni/api-automated-tests/suites/6685125576/artifacts/253564703) and [logs](https://github.com/aziz-souabni/api-automated-tests/suites/6685125576/artifacts/253564703) in HTML format :
 
 * Report file contains an overview of the test execution results and statistics based on tags as well as a list of all executed test cases
 
